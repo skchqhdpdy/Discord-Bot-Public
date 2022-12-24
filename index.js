@@ -64,7 +64,7 @@ client.on('message', (message) => {
         var ppbsetid // index.js:90
         var options2 = {
             host: 'osu.ppy.sh',
-            path: `/api/get_beatmaps?k=4597ac5b5d5f0b3dace4103c6ae0f9a69fccce6b&b=${ppb}`,
+            path: `/api/get_beatmaps?k={ 오스 api키 (삭제함) }&b=${ppb}`,
             port: '443',
             method: 'GET'
             };
