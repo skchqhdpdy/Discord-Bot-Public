@@ -3,6 +3,9 @@ const { json } = require('express');
 const client = new Discord.Client();
 const { prefix, token } = require("./config.json");
 
+var http = require('https');
+const scanf = require('scanf');
+
 client.setMaxListeners(0)
 
 client.on('ready', () => {
@@ -56,15 +59,12 @@ client.on('message', (message) => {
     if(message.content.substring(0,6) === `${prefix}pp?b=`) {
 
         const ppb = message.content.substring(6);
-        var http = require('https');
-        const scanf = require('scanf');
-
         console.log(`\ninput:${ppb}\n\n`)
 
         var ppbsetid // index.js:90
         var options2 = {
             host: 'osu.ppy.sh',
-            path: `/api/get_beatmaps?k={ 오스 api키 (삭제함) }&b=${ppb}`,
+            path: `/api/get_beatmaps?k=4597ac5b5d5f0b3dace4103c6ae0f9a69fccce6b&b=${ppb}`,
             port: '443',
             method: 'GET'
             };
@@ -240,7 +240,7 @@ client.on('message', (message) => {
 
 client.on('message', (message) => {
     if(message.content === `${prefix}봇 초대`) {
-        message.reply('https://discord.com/api/oauth2/authorize?client_id=753682115505160393&permissions=8&scope=bot')
+        message.reply('https://discord.com/api/oauth2/authorize?client_id=753682115505160393&permissions=8&scope=bot+applications.commands')
     }
 
     if(message.content === `${prefix}ping`) {
@@ -270,7 +270,7 @@ client.on('message', (message) => {
     }
 
     if(message.content === `${prefix}닉초디코`) {
-        message.reply('anireN Fanboy#9400')
+        message.reply('<@399535550832443392> anireN Fanboy#9400 --> aodd.xyz')
     }
 
     if(message.content === `${prefix}닉초스팀`) {
@@ -282,7 +282,7 @@ client.on('message', (message) => {
     }
 
     if(message.content === `${prefix}닉초유튜브`) {
-        message.reply('https://www.youtube.com/channel/UCGLxIW0MDRAYrK-pDugCsnA')
+        message.reply('https://youtube.com/@AODD1241')
     }
 
 });
